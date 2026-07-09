@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><title>AI 매출 대시보드 — 2026-07-09</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+ body{font-family:'Malgun Gothic',sans-serif;background:#f0f2f5;margin:0;padding:24px}
+ h1{color:#1f4e79;font-size:22px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+ .card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+ .kpi{font-size:30px;font-weight:bold;color:#c0392b} .kpi-label{font-size:13px;color:#888}
+ .insights li{margin-bottom:10px;line-height:1.6;font-size:14px}
+ table{width:100%;border-collapse:collapse;font-size:13px} td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}
+ .danger{color:#c0392b;font-weight:bold} .warn{color:#e67e22;font-weight:bold}
+</style></head><body>
+<h1>🧠 AI 매출 인사이트 대시보드 <small style="color:#888;font-size:14px">2026-07-09 기준 · 자동 생성</small></h1>
+<div class="grid">
+ <div class="card"><div class="kpi-label">어제 매출 (주간 평균 대비)</div>
+  <div class="kpi">387,800원</div><div style="color:#c0392b;font-weight:bold">-32.1%</div></div>
+ <div class="card"><div class="kpi-label">어제 주문</div><div class="kpi">14건</div>
+  <div class="kpi-label">주간 일평균 매출 570,857원</div></div>
+ <div class="card"><div class="kpi-label">AI 인사이트</div><ul class="insights"><li>🔴 매출 급락 경보: 어제 매출이 주간 평균 대비 32.1% 낮습니다. 광고·노출 상태 점검이 필요합니다.</li><li>📈 '보온보냉 도시락 가방' 매출이 전주 대비 크게 상승했습니다. 재고 확보와 광고 집중을 검토하세요.</li><li>📉 '블루투스 미니 스피커' 매출이 전주 대비 30.0% 하락했습니다. 가격·리뷰·경쟁 상품을 점검하세요.</li><li>📦 재고 경보 3건: '접이식 노트북 거치대'은(는) 약 5.6일 후 소진 예상입니다. 리드타임을 감안해 지금 발주하세요.</li></ul></div>
+</div>
+<div class="grid" style="margin-top:16px">
+ <div class="card"><canvas id="daily"></canvas></div>
+ <div class="card"><canvas id="top10"></canvas></div>
+ <div class="card"><h3 style="margin-top:0;font-size:15px">📦 재고 소진 예측 (10일 이내)</h3>
+  <table><tr><th>상품</th><th>현재고</th><th>소진 예상</th></tr><tr><td>접이식 노트북 거치대</td><td>8개</td><td class='warn'>D-5.6</td></tr><tr><td>무선 충전 패드 15W</td><td>19개</td><td class='warn'>D-6.0</td></tr><tr><td>휴대용 미니 가습기</td><td>29개</td><td class='warn'>D-9.7</td></tr></table></div>
+</div>
+<script>
+new Chart(document.getElementById('daily'), {type:'line',
+ data:{labels:["2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09"],
+  datasets:[{label:'일별 매출',data:[464400, 655900, 106400, 378800, 563400, 599100, 558400, 547200, 726600, 989800, 120300, 670500, 553800, 387800],borderColor:'#2e75b6',tension:.3,fill:false}]},
+ options:{plugins:{title:{display:true,text:'최근 14일 매출 추이'}}}});
+new Chart(document.getElementById('top10'), {type:'bar',
+ data:{labels:["휴대용 미니 가습기", "블루투스 미니 스피커", "무선 충전 패드 15W", "프리미엄 텀블러 500ml", "메모리폼 손목 쿠션", "데스크 모니터 받침대", "보온보냉 도시락 가방", "접이식 노트북 거치대", "스마트 체중계", "LED 무드등"],
+  datasets:[{label:'최근 7일 매출',data:[522900, 502600, 437800, 396900, 361200, 296100, 287300, 279000, 269100, 143100],backgroundColor:'#2e75b6'}]},
+ options:{indexAxis:'y',plugins:{title:{display:true,text:'상품별 매출 TOP 10 (7일)'}}}});
+</script></body></html>
