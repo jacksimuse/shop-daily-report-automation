@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "name": "스마트스토어",
+      "file": "data_sources/smartstore_orders.csv",
+      "mapping": {"주문번호": "주문ID", "주문일자": "일자", "상품명": "상품", "수량": "개수", "단가": "판매단가", "금액": "결제금액"}
+    },
+    {
+      "name": "쿠팡",
+      "file": "data_sources/coupang_orders.csv",
+      "mapping": {"주문번호": "order_no", "주문일자": "date", "상품명": "item_name", "수량": "qty", "단가": "unit_price", "금액": "total"}
+    },
+    {
+      "name": "자사몰",
+      "file": "data_sources/mall_orders.csv",
+      "mapping": {"주문번호": "번호", "주문일자": "주문일", "상품명": "제품명", "수량": "수량", "단가": "가격", "금액": "합계"}
+    }
+  ],
+  "retry": {"attempts": 3, "delay_seconds": 2},
+  "report": {"run_after_merge": true}
+}
