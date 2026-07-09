@@ -3,3 +3,5 @@ __pycache__/
 data/
 output/
 .env
+level2_통합파이프라인/data_sources/
+level2_통합파이프라인/pipeline.log
